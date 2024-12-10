@@ -85,7 +85,9 @@ substrate-frame-rpc-system.workspace = true
 substrate-frame-rpc-system.default-features = true
 prometheus-endpoint.workspace = true
 prometheus-endpoint.default-features = true
-polkadot-cli = { features = ["rococo-native"], workspace = true, default-features = true }
+polkadot-cli = { features = [
+	"rococo-native",
+], workspace = true, default-features = true }
 polkadot-primitives.workspace = true
 polkadot-primitives.default-features = true
 xcm.workspace = true
@@ -115,16 +117,13 @@ substrate-build-script-utils.default-features = true
 
 [features]
 default = ["std"]
-std = [
-	"log/std",
-	"parachain-template-runtime/std",
-	"xcm/std",
-]
+std = ["log/std", "parachain-template-runtime/std", "xcm/std"]
 runtime-benchmarks = [
 	"cumulus-primitives-core/runtime-benchmarks",
 	"frame-benchmarking-cli/runtime-benchmarks",
 	"frame-benchmarking/runtime-benchmarks",
 	"parachain-template-runtime/runtime-benchmarks",
+
 	"polkadot-cli/runtime-benchmarks",
 	"polkadot-primitives/runtime-benchmarks",
 	"sc-service/runtime-benchmarks",
